@@ -29,4 +29,10 @@ class Admin::UsersController < ApplicationController
       redirect_to admin_root_url
     end
   end
+
+  def verify_admin
+    unless current_user.is_admin?
+      redirect_to root_url
+    end
+  end
 end
