@@ -1,0 +1,28 @@
+<div class="single">
+  <div class="container">
+    <div class="single-top wow bounceInLeft" data-wow-delay="0.3s">
+      <img class="img-responsive wow fadeInUp animated" data-wow-delay=".5s" src="images/b1.jpg" alt="" />
+        <div class="lone-line">
+          <h2 class="center"><%= @review.title %></h2>
+          <ul class="grid-blog">
+            <li><span><i class="glyphicon glyphicon-time"> </i>
+              <%= l @review.created_at, format: :short %></span></li>
+            <li><i class="glyphicon glyphicon-comment">
+              </i><%= pluralize @review.comments.count, "comment" %></li>
+            <li><a href="#"><i class="glyphicon glyphicon-user">
+              </i><%= @review.user.name %></a></li>
+          </ul>
+          <p class="wow fadeInLeft animated" data-wow-delay=".5s">
+            <%= raw @review.content %>
+          </p>
+          <% if user_signed_in? && @review.user_id == current_user.id %>
+            <div >
+              <%= link_to t("edit"), edit_review_path @review, class: "btn btn-default" %>
+              <%= link_to t("delete"), review_path @review, class: "btn btn-default",
+                method: :delete, data: {confirm: t("confirm_delete")} %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

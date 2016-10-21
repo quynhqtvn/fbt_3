@@ -8,6 +8,9 @@ class ReviewsController < ApplicationController
       per_page: Settings.per_page
   end
 
+  def show
+  end
+
   def new
     @review = Review.new
   end
@@ -20,6 +23,28 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @review.update_attributes review_params
+      flash[:success] = t "review.update_successfull"
+      redirect_to reviews_path
+    else
+      flash[:notice] = t "review.update_error"
+      render :edit
+    end
+  end
+
+  def destroy
+    if @review.destroy
+      flash[:success] = t "review.delete_successfull"
+    else
+      flash[:notice] = t "review.delete_error"
+    end
+    redirect_to reviews_path
   end
 
   private
