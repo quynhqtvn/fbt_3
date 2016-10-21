@@ -10,6 +10,7 @@
           <ul class="res">
             <li><%= link_to t("home"), root_path, class: "active" %></li>
             <li><%= link_to t("tour.tour"), tours_path %></li>
+            <li><%= link_to t("review.title"), reviews_path %></li>
             <li class="dropdown">
               <%= link_to "#", {class: "dropdown-toggle",
                 "data-toggle": "dropdown"} do %>
@@ -26,8 +27,8 @@
               <% if current_user.is_admin? %>
                 <li><%= link_to t("admin.title"), admin_root_path %></li>
               <% end %>
-              <li><%= link_to t("sign_out"), destroy_user_session_path,
-                method: :delete %></li>
+                <li><%= link_to t("sign_out"), destroy_user_session_path,
+                  method: :delete %></li>
             <% else %>
               <li><%= link_to t("sign_in"), new_user_session_path %></li>
               <li><%= link_to t("sign_up"), new_user_registration_path %></li>

@@ -1,0 +1,4 @@
+$('#comment-<%= @comment.id%>').click(function(){
+  $('#comment-form').
+    replaceWith('<%= j render "comments/edit", comment: @comment %>');
+  })

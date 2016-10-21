@@ -9,6 +9,8 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @comments = @review.comments.latest.paginate page: params[:page],
+      per_page: Settings.per_page
   end
 
   def new
