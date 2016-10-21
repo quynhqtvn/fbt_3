@@ -34,6 +34,7 @@ en:
   new: "New"
   sign_in: "Sign in"
   sign_up: "Sign up"
+  sign_out: "Sign out"
   service: "Service"
   welcome_travel: "Welcome To Our Travel"
   welcome_travel_desc: "The Best Way To Be Lost"
@@ -194,7 +195,6 @@ en:
         update_tour: "Update tour"
   submit: "Submit"
   like: "Like"
-  unlike: "Unlike"
   comment:
     add_new: "Add a comment"
     title: "Comments"
@@ -212,3 +212,19 @@ en:
     placeholder_password: "Password"
   confirm_delete: "Are you sure?"
   ago: " ago"
+  admin:
+    title: "Admin"
+    delete: "Delete"
+    destroy_confirm: "Do you sure delete???"
+    list_user: "List User"
+    manager:
+      title: "Manager"
+      tour: "Tour"
+      category: "Category"
+      review: "Review"
+    user:
+      home: "Home"
+  user:
+    name: "Name"
+    avatar: "Avatar"
+    action: "Action"

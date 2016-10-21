@@ -27,6 +27,12 @@
               </ul>
             </li>
             <li><%= link_to t("admin.back"), root_path %></li>
+              <ul class="dropdown-menu background">
+                <li><%= link_to t("admin.manager.tour"), "#" %></li>
+                <li><%= link_to t("admin.manager.category"), "#" %></li>
+                <li><%= link_to t("admin.manager.review"), "#" %></li>
+              </ul>
+            </li>
             <li><%= link_to t("sign_out"), destroy_user_session_path,
                 method: :delete %></li>
           </ul>
@@ -36,3 +42,7 @@
     </div>
   </div>
 </div>
+<<<<<<< 02d0d165a93e623544f99bba8be60c61d697207d
+=======
+
+>>>>>>> admin delete show user
