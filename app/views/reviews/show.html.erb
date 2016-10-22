@@ -17,11 +17,14 @@
           </p>
           <% if user_signed_in? && @review.user_id == current_user.id %>
             <div >
-              <%= link_to t("edit"), edit_review_path @review, class: "btn btn-default" %>
-              <%= link_to t("delete"), review_path @review, class: "btn btn-default",
+              <%= link_to t("edit"), edit_review_path(@review), class: "btn btn-default" %>
+              <%= link_to t("delete"), review_path(@review), class: "btn btn-default",
                 method: :delete, data: {confirm: t("confirm_delete")} %>
             </div>
           <% end %>
+          <div id="review_<%= @review.id %>_likes">
+            <%= render "likes", locals: {review: @review} %>
+          </div>
         </div>
     </div>
   </div>

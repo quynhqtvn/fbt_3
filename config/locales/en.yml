@@ -192,3 +192,5 @@ en:
         list_tour: "List tour"
         update_tour: "Update tour"
   submit: "Submit"
+  like: "Like"
+  unlike: "Unlike"

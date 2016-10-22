@@ -1,0 +1,13 @@
+<% if user_signed_in? && current_user.likes?(@review) %>
+  <%= link_to t("unlike"), review_like_path(@review), method: :delete, remote: true,
+    class: "btn btn-primary" %>
+<% else %>
+  <%= link_to t("like"), review_like_path(@review), method: :post, remote: true,
+    class: "btn btn-primary" %>
+<% end %>
+
+<%= @review.likes.count %>
+
+<% @review.likes.each do |like| %>
+  <%= like.user.name %>
+<% end %>

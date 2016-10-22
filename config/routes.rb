@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => "/ckeditor"
   resources :reviews do
     resources :comments
+    resource :like
   end
   namespace :admin do
     root "users#index", as: "root"
