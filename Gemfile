@@ -28,6 +28,8 @@ gem "simple_form"
 gem "pry-byebug"
 gem "pry-rails"
 gem "carrierwave"
+gem "whenever", :require => false
+gem "sidekiq"
 
 group :development, :test do
   gem "byebug", platform: :mri

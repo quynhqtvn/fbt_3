@@ -21,6 +21,7 @@ class BookToursController < ApplicationController
   def create
     @book_tour = current_user.book_tours.build book_tour_params
     if @book_tour.save
+      UserMailer.book_tour(@book_tour).deliver_now
       redirect_to @book_tour
     else
       flash[:danger] = t "book_tour.failed"

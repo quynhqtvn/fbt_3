@@ -145,3 +145,10 @@ en:
     name: "Name"
     avatar: "Avatar"
     action: "Action"
+  unlike: "Unlike"
+  mail:
+    subject: "New tour booking!"
+    has_been_booked_a_tour: has been booked a tour
+    people: "People number:"
+    requirement: "Requirement:"
+    at: "At: "
