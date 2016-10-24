@@ -1,0 +1,13 @@
+<table class="table table-striped">
+  <thead>
+    <tr class="tr">
+      <th><%= t "admin.manager.review.content" %></th>
+       <th><%= t "admin.manager.review.is_confirm" %></th>
+      <th><%= t "admin.manager.review.delete" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @reviews %>
+  </tbody>
+</table>
+<%= will_paginate %>

@@ -29,6 +29,11 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar %>
+      </div>
+
+      <div class="form-group">
         <%= f.submit t("user_resources.signup"),
           class: "btn btn-primary btn-block btn-lg" %>
       </div>

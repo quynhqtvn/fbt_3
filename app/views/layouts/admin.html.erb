@@ -12,20 +12,10 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div id="container">
-      <%= render "layouts/header_admin" %>
-      <div id="content-container">
-        <%= render "layouts/sidebar_admin" %>
-        <div class="container">
-          <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>">
-              <%= value %>
-            </div>
-          <% end %>
-          <%= yield %>
-        </div>
-        <%= render "layouts/footer_admin" %>
-      </div>
+    <%= render "layouts/header_admin" %>
+    <div id="container", class="word-list">
+        <%= yield %>
     </div>
+    <%= render "layouts/footer_admin" %>
   </body>
 </html>

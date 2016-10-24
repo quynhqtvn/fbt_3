@@ -16,19 +16,22 @@
                 <%= t "service" %>
                 <b class="caret"></b>
               <% end %>
-              <ul class="dropdown-menu background" role="menu">
+              <ul class="dropdown-menu" style="background-color: #3cafe6">
                 <li><%= link_to t("food"), "#" %></li>
                 <li><%= link_to t("hotel"), "#" %></li>
                 <li><%= link_to t("new"), "#" %></li>
               </ul>
             </li>
             <% if user_signed_in? %>
-                <li><%= link_to t("sign_out"), destroy_user_session_path,
-                  method: :delete %></li>
-              <% else %>
-                <li><%= link_to t("sign_in"), "#" %></li>
-                <li><%= link_to t("sign_in_with_fb"), user_facebook_omniauth_authorize_path %></li>
+              <% if current_user.is_admin? %>
+                <li><%= link_to t("admin.title"), admin_root_path %></li>
               <% end %>
+              <li><%= link_to t("sign_out"), destroy_user_session_path,
+                method: :delete %></li>
+            <% else %>
+              <li><%= link_to t("sign_in"), new_user_session_path %></li>
+              <li><%= link_to t("sign_up"), new_user_registration_path %></li>
+            <% end %>
           </ul>
         </nav>
       </div>

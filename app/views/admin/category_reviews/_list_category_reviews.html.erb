@@ -1,0 +1,15 @@
+<table class="table">
+  <thead>
+    <tr class="tr">
+      <td><%= t "admin.manager.category_review.type" %></td>
+      <td><%= t "admin.manager.category_review.show_review" %></td>
+      <td><%= t "admin.manager.category_tour.new" %></td>
+      <td><%= t "admin.manager.category_review.update" %></td>
+      <td><%= t "admin.manager.category_review.delete" %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @category_reviews %>
+  </tbody>
+</table>
+<%= will_paginate %>

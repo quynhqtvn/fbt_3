@@ -8,6 +8,13 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :ratings, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  mount_uploader :avatar, AvatarUploader
+
+  scope :alphabet, ->{order :name}
+
+  def is_user? user
+    user == self
+  end
 
   class << self
     def from_omniauth access_token

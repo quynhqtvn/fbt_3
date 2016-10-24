@@ -1,12 +1,38 @@
-<div id="header">
-  <h1><%= t "cms" %></h1>
-  <p class="slogan"><%= t "slogan" %></p>
-</div>
-
-<div id="navigation">
-  <ul>
-    <li><%= link_to t("nav.home"), "#", target: "blank" %></li>
-    <li><%= link_to t("nav.about"), "#" %></li>
-  </ul>
-  <p class="greeting"><%= t "greeting" %></p>
+<div class="header">
+  <div class="container">
+    <div class="header-main">
+      <div class="logo wow bounceInLeft" data-wow-delay="0.3s">
+        <%= link_to image_tag("logo1.png"), "#" %>
+      </div>
+      <div class="top-navg">
+        <span class="menu"><%= image_tag "icon.png" %></span>
+        <nav class="cl-effect-13">
+          <ul class="res">
+            <li><%= link_to t("admin.user.home"), admin_root_path,
+              class: "active" %></li>
+            <li class="dropdown">
+              <%= link_to "#", {class: "dropdown-toggle",
+                "data-toggle": "dropdown"} do %>
+                <%= t "admin.manager.title" %>
+                <b class="caret"></b>
+              <% end %>
+              <ul class="dropdown-menu" style="background-color: #3cafe6">
+                <li><%= link_to t("admin.manager.tour.title"),
+                  admin_tours_path %></li>
+                <li><%= link_to t("admin.manager.category_tour.title"),
+                  admin_category_tours_path %></li>
+                <li><%= link_to t("admin.manager.category_review.title"),
+                  admin_category_reviews_path %>
+                </li>
+              </ul>
+            </li>
+            <li><%= link_to t("admin.back"), root_path %></li>
+            <li><%= link_to t("sign_out"), destroy_user_session_path,
+                method: :delete %></li>
+          </ul>
+        </nav>
+      </div>
+    <div class="clearfix"></div>
+    </div>
+  </div>
 </div>

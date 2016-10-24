@@ -1,0 +1,10 @@
+<tr>
+  <td><%= book_tour.people_number %></td>
+  <td><%= book_tour.requirement %></td>
+  <td>
+    <%= link_to admin_tour_book_tour_path(@tour, book_tour), method: :delete,
+      data: {confirm: t("admin.manager.book_tour.destroy_confirm")} do %>
+      <span class="glyphicon glyphicon-trash"></span>
+    <% end %>
+  </td>
+</tr>

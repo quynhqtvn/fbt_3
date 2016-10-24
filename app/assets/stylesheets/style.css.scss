@@ -2892,10 +2892,28 @@ h3.typo1 {
 .background{
   background-color: #3cafe6;
 }
-/*--meadia quiries end here--*/
 
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   width: 70%;
   margin: auto;
+}
+
+.image_avatar {
+  width: auto;
+  height: 50px;
+}
+
+.category-title{
+  font-weight: bold;
+}
+
+.word-list {
+  color: green;
+  text-align: center;
+  padding: 10px;
+}
+
+.tr{
+background-color: #3cafe6;
 }

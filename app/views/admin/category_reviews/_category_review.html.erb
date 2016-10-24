@@ -1,0 +1,24 @@
+<tr>
+  <td><%= category_review.title %></td>
+  <td>
+    <%= link_to admin_category_review_reviews_path(category_review) do %>
+      <span class="glyphicon glyphicon-list-alt"></span>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to new_admin_category_review_path(category_review) do %>
+      <span class="glyphicon glyphicon-plus-sign"></span>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to edit_admin_category_review_path(category_review) do %>
+      <span class="glyphicon glyphicon-edit"></span>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to [:admin, category_review], method: :delete,
+      data: {confirm: t("admin.manager.category_review.destroy_confirm")} do %>
+      <span class="glyphicon glyphicon-trash"></span>
+    <% end %>
+  </td>
+</tr>
