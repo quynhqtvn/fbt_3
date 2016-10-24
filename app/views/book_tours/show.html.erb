@@ -1,1 +1,29 @@
-<span><%= @book_tour.tour.name %></span>
+<center><h3><%= t "invoice" %></h3></center>
+<% if notice %>
+  <div class="notice"><%= notice %></div>
+<% elsif alert %>
+  <div class="alert"><%= alert %></div>
+<% end %>
+<h4>
+  <%= t "tour.name" %>
+  <%= @book_tour.tour.name %>
+</h4>
+<h4>
+  <%= t "tour.price" %>
+  <%= @book_tour.people_number * @book_tour.tour.price %>
+</h4>
+<h4>
+  <%= t "email" %><%= @book_tour.user.email %>
+</h4>
+<% if @book_tour.card.nil? %>
+  <h4>
+    <%= t "status" %><%= @book_tour.status %>
+  </h4>
+  <h4>
+    <%= t "paypal_transaction" %><%= @book_tour.transaction_id %>
+  </h4>
+<% else %>
+  <h4>
+    <%= t "transaction" %><%= @book_tour.card.card_transaction.params[:transaction_id] %>
+  </h4>
+<% end %>

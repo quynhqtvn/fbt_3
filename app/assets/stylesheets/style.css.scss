@@ -2951,7 +2951,22 @@ h3.typo1 {
 
 .tr{
 background-color: #3cafe6;
+}
 
 .center {
   text-align: center;
+}
+
+.image_card{
+  max-width: 100px;
+}
+
+.notice{
+  background-color: lightgreen;
+  padding: 5px;
+}
+
+.alert{
+  background-color: lightpink;
+  padding: 5px;
 }

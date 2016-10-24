@@ -1,4 +1,4 @@
-<h1><%= t "book_tour.book" %></h1>
+<center><h1><%= @tour.name %></h1></center>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for @book_tour do |f| %>
@@ -10,6 +10,50 @@
       <div class="form-group">
         <%= f.label :requirement %>
         <%= f.text_area :requirement, class: "form-control" %>
+      </div>
+      <div class="payment_method">
+        <div class="form-group">
+          <%= f.label :payment_method %>
+        </div>
+        <%= radio_button_tag :payment_method, "paypal" %>
+        <%= image_tag "paypal_logo.jpg", class: "image_card" %>
+        <%= radio_button_tag :payment_method, "card", true %>
+        <%= image_tag "credit-card.jpg", class: "image_card" %>
+        <fieldset class="card_info">
+          <%= f.fields_for :card do |c| %>
+            <div class="form-group">
+              <%= c.label :first_name %>
+              <%= c.text_field :first_name, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= c.label :last_name %>
+              <%= c.text_field :last_name, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= c.label :card_type %>
+            </div>
+            <div class="form-group">
+              <%= c.select :card_type, [[t(:visa), "visa"],
+                [t(:discover), "discover"]] %>
+            </div>
+            <div class="form-group">
+              <%= c.label :card_number %>
+              <%= c.text_field :card_number, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= c.label :card_verification %>
+              <%= c.text_field :card_verification, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= c.label :card_expires_on %>
+            </div>
+            <div class="form-group">
+              <%= c.date_select :card_expires_on, discard_day: true,
+                start_year: Date.today.year, end_year: Date.today.year + Settings.year,
+                  add_month_numbers: true %>
+            </div>
+          <% end %>
+        </fieldset>
       </div>
       <%= f.submit t(:book), class: "btn btn-primary" %>
     <% end %>
