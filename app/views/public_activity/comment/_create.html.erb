@@ -1,0 +1,6 @@
+<%= t "activity.comment_add" %>
+<% if activity.trackable %>
+  <%= link_to activity.trackable.review.title, activity.trackable.review %>
+<% else %>
+  <%= t "activity.action_removed" %>
+<% end %>
