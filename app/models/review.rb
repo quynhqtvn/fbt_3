@@ -1,5 +1,7 @@
 class Review < ApplicationRecord
   include CustomOrder
+  include PublicActivity::Model
+
   belongs_to :user
   belongs_to :category_review
 

@@ -211,6 +211,25 @@ en:
   confirm_delete: "Are you sure?"
   ago: " ago"
   user:
+    login: "Login"
+    facebook: "Login with Facebook"
+    placeholder_email: "Email address"
+    placeholder_password: "Password"
+  confirm_delete: "Are you sure?"
+  ago: " ago"
+  admin:
+    title: "Admin"
+    delete: "Delete"
+    destroy_confirm: "Do you sure delete???"
+    list_user: "List User"
+    manager:
+      title: "Manager"
+      tour: "Tour"
+      category: "Category"
+      review: "Review"
+    user:
+      home: "Home"
+  user:
     name: "Name"
     avatar: "Avatar"
     action: "Action"
@@ -225,3 +244,12 @@ en:
   status: "Paypal status: "
   paypal_transaction: "Paypal Transaction Identifier: "
   transaction: "Transaction Identifier: "
+  activity:
+    title: "Activity Feed"
+    comment_add: "added comment to"
+    comment_update: "updated comment to"
+    comment_delete: "deleted comment to"
+    review_add: "added a new review"
+    review_update: "updated review"
+    review_delete: "deleted review"
+    action_removed: "which has since been removed"

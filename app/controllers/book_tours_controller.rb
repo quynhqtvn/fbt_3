@@ -39,6 +39,7 @@ class BookToursController < ApplicationController
             alert: @book_tour.card.card_transaction.message
         end
       end
+      @book_tour.create_activity :create, owner: current_user
     else
       render :new
     end

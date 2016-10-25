@@ -20,6 +20,10 @@ class User < ApplicationRecord
     review.likes.where(user_id: id).any?
   end
 
+  def likes? review
+    review.likes.where(user_id: id).any?
+  end
+
   class << self
     def from_omniauth access_token
       data = access_token.info
