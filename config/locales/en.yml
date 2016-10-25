@@ -253,3 +253,10 @@ en:
     review_update: "updated review"
     review_delete: "deleted review"
     action_removed: "which has since been removed"
+  unlike: "Unlike"
+  mail:
+    subject: "New tour booking!"
+    has_been_booked_a_tour: has been booked a tour
+    people: "People number:"
+    requirement: "Requirement:"
+    at: "At: "

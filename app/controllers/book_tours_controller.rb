@@ -40,6 +40,7 @@ class BookToursController < ApplicationController
         end
       end
       @book_tour.create_activity :create, owner: current_user
+      UserMailer.book_tour(@book_tour).deliver_now
     else
       render :new
     end

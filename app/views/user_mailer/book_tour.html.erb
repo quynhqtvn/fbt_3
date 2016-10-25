@@ -1,0 +1,6 @@
+<h1><%= t "mail.subject" %></h1>
+<%= @book_tour.user.name %> <%= t "mail.has_been_booked_a_tour" %>
+<%= @book_tour.tour.name %><br>
+<%= t "mail.people" %> <%= @book_tour.people_number %><br>
+<%= t "mail.requirement" %> <%= @book_tour.requirement %><br>
+<%= t "mail.at" %> <%= @book_tour.created_at %>
