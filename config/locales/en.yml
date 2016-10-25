@@ -83,9 +83,6 @@ en:
   no_items_found: "No items found"
   sign_out: "Sign out"
   sign_in_with_fb: "Sign in with Facebook"
-  tour:
-    not_found: "Tour not found"
-    list: "Tours list"
   review:
     create_successfull: "Review created successfully!"
     update_successfull: "Review updated successfully!"
@@ -96,7 +93,10 @@ en:
     create: "Create review"
     edit: "Edit review"
     list: "List reviews"
-    tour: "Tour"
+  tour:
+    name: "Tour: "
+    not_found: "Tour not found"
+    list: "Tours list"
     time: "Time: "
     transport: "Transport: "
     place_departure: "Place departure: "
@@ -145,3 +145,10 @@ en:
     name: "Name"
     avatar: "Avatar"
     action: "Action"
+  invoice: "TOUR INVOICE"
+  paypal: "paypal"
+  card: "card"
+  email: "Email: "
+  status: "Paypal status: "
+  paypal_transaction: "Paypal Transaction Identifier: "
+  transaction: "Transaction Identifier: "

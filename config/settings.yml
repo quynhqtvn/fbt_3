@@ -1,2 +1,14 @@
 tour_pages: 9
 per_page: "10"
+business: "business@vovanhai.com"
+year: 10
+name: "Flaying Cakes"
+address: "123 5th Av."
+city: "New York"
+state: "NY"
+country: "US"
+zip: "10001"
+paypal: "paypal"
+card: "card"
+paypal_host: paypal_host: https://www.sandbox.paypal.com
+app_host: app_host: http://localhost:3000

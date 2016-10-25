@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020064120) do
+ActiveRecord::Schema.define(version: 20161023024606) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
@@ -35,11 +35,40 @@ ActiveRecord::Schema.define(version: 20161020064120) do
     t.integer  "tour_id"
     t.integer  "people_number"
     t.string   "requirement"
-    t.boolean  "is_pay",        default: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.boolean  "is_pay",              default: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.text     "notification_params"
+    t.string   "status"
+    t.string   "transaction_id"
+    t.datetime "purchased_at"
     t.index ["tour_id"], name: "index_book_tours_on_tour_id"
     t.index ["user_id"], name: "index_book_tours_on_user_id"
+  end
+
+  create_table "card_transactions", force: :cascade do |t|
+    t.integer  "card_id"
+    t.string   "action"
+    t.integer  "amount"
+    t.boolean  "success"
+    t.string   "authorization"
+    t.string   "message"
+    t.text     "params"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["card_id"], name: "index_card_transactions_on_card_id"
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.integer  "book_tour_id"
+    t.string   "ip_address"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "card_type"
+    t.date     "card_expires_on"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["book_tour_id"], name: "index_cards_on_book_tour_id"
   end
 
   create_table "category_reviews", force: :cascade do |t|
@@ -52,6 +81,22 @@ ActiveRecord::Schema.define(version: 20161020064120) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.string   "data_fingerprint"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
+    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
   end
 
   create_table "comments", force: :cascade do |t|

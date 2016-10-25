@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
   resources :tours, only: [:index, :show]
   resources :book_tours
+  post "/book_tours/:id" => "book_tours#show"
 end
