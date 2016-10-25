@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @review.comments.create comment_params
     if @comment.save
+      @comment.create_activity :create, owner: current_user
       respond_to do |format|
         format.html do
           flash[:success] = t "comment.added"
@@ -39,6 +40,7 @@ class CommentsController < ApplicationController
       respond_to do |format|
         format.html do
           flash[:success] = t "comment.deleted"
+          @comment.create_activity :destroy, owner: current_user
           redirect_to @review
         end
         format.js

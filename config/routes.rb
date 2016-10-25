@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "static_pages#home"
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks#create"}
   mount Ckeditor::Engine => "/ckeditor"
@@ -13,4 +14,6 @@ Rails.application.routes.draw do
   resources :tours, only: [:index, :show]
   resources :book_tours
   post "/book_tours/:id" => "book_tours#show"
+  resources :activities
+  resources :user, only: [:show, :index]
 end

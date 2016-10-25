@@ -1,4 +1,5 @@
 class BookTour < ApplicationRecord
+  include PublicActivity::Model
   belongs_to :user
   belongs_to :tour
 

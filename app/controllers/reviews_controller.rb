@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
   def create
     @review = current_user.reviews.build review_params
     if @review.save
+      @review.create_activity :create, owner: current_user
       flash[:success] = t "review.create_successfull"
       redirect_to root_path
     else
@@ -42,6 +43,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     if @review.destroy
+      @review.create_activity :create, owner: current_user
       flash[:success] = t "review.delete_successfull"
     else
       flash[:notice] = t "review.delete_error"

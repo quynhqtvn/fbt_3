@@ -152,3 +152,12 @@ en:
   status: "Paypal status: "
   paypal_transaction: "Paypal Transaction Identifier: "
   transaction: "Transaction Identifier: "
+  activity:
+    title: "Activity Feed"
+    comment_add: "added comment to"
+    comment_update: "updated comment to"
+    comment_delete: "deleted comment to"
+    review_add: "added a new review"
+    review_update: "updated review"
+    review_delete: "deleted review"
+    action_removed: "which has since been removed"

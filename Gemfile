@@ -29,6 +29,8 @@ gem "pry-byebug"
 gem "pry-rails"
 gem "carrierwave"
 gem "activemerchant"
+gem "public_activity"
+
 group :development, :test do
   gem "byebug", platform: :mri
 end
