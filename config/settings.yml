@@ -10,5 +10,5 @@ country: "US"
 zip: "10001"
 paypal: "paypal"
 card: "card"
-paypal_host: paypal_host: https://www.sandbox.paypal.com
-app_host: app_host: http://localhost:3000
+mail_from: "fbt3.framgia@gmail.com"
+mail_to: "fbt3.framgia@gmail.com"
