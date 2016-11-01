@@ -55,6 +55,7 @@ group :test do
   gem "capybara"
   gem "simplecov", require: false
   gem "rails-controller-testing"
+  gem "rspec-activemodel-mocks"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
