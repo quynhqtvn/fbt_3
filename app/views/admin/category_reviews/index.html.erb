@@ -1,7 +1,12 @@
+<% provide :title, "Framgia book tour" %>
 <div id="container">
   <h2 class="word-list">
-  <h2><%= link_to t("category.btn_create"), new_admin_category_review_path,
-    class: "btn-primary" %></h2>
-  <%= t "admin.manager.category_review.list_category_review" %></h2>
+  <div class="pull-right">
+  <%= link_to new_admin_category_review_path, class: "btn btn-primary" do %>
+    <span class="glyphicon glyphicon-plus-sign"></span>
+    <%= t :create_new %>
+  <% end %>
+  </div>
+  List Category Review</h2>
   <%= render "list_category_reviews" %>
 </div>

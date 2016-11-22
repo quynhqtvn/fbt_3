@@ -18,3 +18,9 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+set :environment, 'development'
+
+every 2.minutes do
+  # specify the task name as a string
+  rake "email_task:send_revenue_mail", environment: 'development'
+end

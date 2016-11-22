@@ -1,56 +1,64 @@
-<h1><%= t "admin.manager.tour.new_tour" %></h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for [:admin, @tour] do |f| %>
-      <%= f.hidden_field :category_tour_id, value: @category_tour_id %>
-
-      <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :schedule %>
-        <%= f.text_field :schedule, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :place_departure %>
-        <%= f.text_field :place_departure, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :time %>
-        <%= f.text_field :time, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :people_number %>
-        <%= f.text_field :people_number, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :transport %>
-        <%= f.text_field :transport, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :price %>
-        <%= f.text_field :price, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :content %>
-        <%= f.text_field :content, class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :time_start %>
-        <%= f.text_field :time_start, class: "form-control" %>
-      </div>
-
-      <%= f.submit t(:submit), class: "btn btn-primary" %>
-    <% end %>
-    <br>
+<% provide :title, "Framgia book tour" %>
+<%= form_for [:admin, @tour] do |f| %>
+<%= render "shared/error_messages", object: f.object %>
+<div>
+  <h3>Tour New</h3>
+  <div class="form-group">
+    <hr>
+    <%= f.label :name , class: "name"%>
+    <%= f.text_field :name, style: "width:600px; margin-left: -100px;" %>
   </div>
+  <div class="form-group">
+    <hr>
+    <%= f.label :schedule, class: "name"%>
+    <%= f.text_field :schedule, style: "width:600px; margin-left: -100px;" %>
+  </div>
+  <div class="form-group">
+    <hr>
+    <%= f.label :place_departure, class: "name"%>
+    <%= f.text_field :place_departure, style: "width:600px; margin-left: -100px;" %>
+  </div>
+  <div class="form-group">
+    <hr>
+    <%= f.label :time, class: "name"%>
+    <%= f.text_field :time, style: "width:600px; margin-left: -100px;" %>
+  </div>
+    <div class="form-group">
+    <hr>
+    <%= f.label :people_number, class: "name"%>
+    <%= f.text_field :people_number, style: "width:600px; margin-left: -100px;" %>
+  </div>
+   <div class="form-group">
+    <hr>
+    <%= f.label :transport, class: "name"%>
+    <%= f.text_field :transport, style: "width:600px; margin-left: -100px;" %>
+  </div>
+    <div class="form-group">
+    <hr>
+    <%= f.label :price, class: "name"%>
+    <%= f.text_field :price, style: "width:600px; margin-left: -100px;" %>
+  </div>
+    <div class="form-group">
+    <hr>
+    <div data-provide='datepicker'>
+    <%= f.label :time_start, class: "name"%>
+    <%= f.text_field :time_start, style: "width:600px; margin-left: -100px;" %>
+    </div>
+  </div>
+  <div class="form-group">
+  <hr>
+    <%= f.label :content, class: "content" %>
+    <div class="">
+    <%= f.cktext_area :content %>
+    </div>
+  </div>
+  <div class="form-group">
+      <hr>
+    <%= f.label :category_tour, class: "tour" %>
+
+    <%= f.collection_select :category_tour_id, @categories, :id, :title %>
+  </div>
+  <%= f.submit t("submit"), class: "btn btn-default" %>
+  </div>
+<% end %>
 </div>

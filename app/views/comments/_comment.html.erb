@@ -1,30 +1,32 @@
-<div id="comment-<%= comment.id %>">
-  <div class="code-in">
-    <p class="smith"><a href="#"><i class="glyphicon glyphicon-user">
-      </i> <%= comment.user.name %></a>
-      <span class="date">
-        <%= time_ago_in_words(comment.created_at) %><%= t "ago" %>
-      </span>
-    </p>
-    <div class="clearfix"> </div>
+<div class="container" id="comment_<%= comment.id %>">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="page-header">
+      </div>
+      <div class="comments-list">
+        <div class="media">
+          <p class="pull-right">
+            <small><%= time_ago_in_words(comment.created_at) %><%= t "ago" %></small>
+          </p>
+          <a class="media-left" href="#">
+            <%= image_tag comment.user.avatar.url, class: "image_avatar" %>
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading user_name"><%= comment.user.name %></h4>
+            <p><%= comment.content %></p>
+            <% if can? :manage, comment %>
+              <p>
+                <small><a href=""><%= link_to "", edit_comment_path(comment), comment: comment,
+                  class: "glyphicon glyphicon-edit", remote: true %></a> -
+                  <a href=""><%= link_to "", comment, method: :delete,
+                  data: {confirm: t("confirm_delete")}, class: "glyphicon glyphicon-trash text-danger",
+                   remote: true %></a>
+                </small>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="media-left">
-    <a href="#">
-      <img src="images/g1.jpg" alt="">
-    </a>
-  </div>
-  <div class="media-body">
-    <p><%= comment.content %></p>
-  </div>
-  <div >
-    <% if current_user == comment.user %>
-      <%= link_to "", edit_review_comment_path(comment.review, comment),
-        class: "glyphicon glyphicon-edit", id: "comment-#{comment.id}", remote: true %>
-      <%= link_to "", review_comment_path(comment.review, comment), method: :delete,
-        data: {confirm: t("confirm_delete")}, class: "glyphicon glyphicon-trash text-danger",
-         remote: true %>
-    <% end %>
-  </div>
-  <hr />
 </div>
-

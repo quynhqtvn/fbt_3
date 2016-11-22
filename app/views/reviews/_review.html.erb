@@ -1,7 +1,5 @@
+<% if review.is_confirm == true %>
 <div class="col-md-4 project">
-  <div class="projectThumbnail">
-    <%= image_tag "g1.jpg", class: "img-responsive thumbnailImage" %>
-  </div>
   <div class="projectInfo">
     <div class="clearfix"> </div>
     <h4><%= link_to review.title, review %></h4>
@@ -9,3 +7,4 @@
     <p><%= review.user.name %> | <%= l review.created_at, format: :short %></p>
   </div>
 </div>
+<% end %>

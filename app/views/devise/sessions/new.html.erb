@@ -1,3 +1,4 @@
+<% provide :title, "Framgia book tour" %>
 <div class="row">
   <div class="col-sm-4 col-sm-offset-4">
     <h1 class="text-center"><%= t "user_resources.login" %></h1>
@@ -22,12 +23,12 @@
       <% end -%>
 
       <div class="form-group">
-        <%= f.submit t("user.login"),
+        <%= f.submit "Log in",
           class: "btn btn-primary btn-block btn-lg" %>
       </div>
       <hr />
       <div class="form-group">
-        <%= link_to t("user.facebook"), user_facebook_omniauth_authorize_path,
+        <%= link_to "Log in with facebook", user_facebook_omniauth_authorize_path,
           class: "btn btn-primary btn-block btn-lg omb_btn-facebook" %>
       </div>
     <% end %>

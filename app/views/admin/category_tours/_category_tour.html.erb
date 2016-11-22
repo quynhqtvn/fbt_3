@@ -1,18 +1,13 @@
 <tr>
   <td><%= category_tour.title %></td>
   <td>
-    <%= link_to new_admin_category_tour_path(category_tour) do %>
-      <span class="glyphicon glyphicon-plus-sign"></span>
-    <% end %>
-  </td>
-  <td>
     <%= link_to edit_admin_category_tour_path(category_tour) do %>
       <span class="glyphicon glyphicon-edit"></span>
     <% end %>
   </td>
   <td>
     <%= link_to [:admin, category_tour], method: :delete,
-      data: {confirm: t("admin.category_tour.destroy_confirm")} do %>
+      data: {confirm: "Are you sure"} do %>
       <span class="glyphicon glyphicon-trash"></span>
     <% end %>
   </td>

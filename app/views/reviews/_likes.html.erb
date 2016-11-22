@@ -6,8 +6,8 @@
     class: "btn btn-primary" %>
 <% end %>
 
-<%= @review.likes.count %>
+(<%= @review.likes.count %>)
 
 <% @review.likes.each do |like| %>
-  <%= like.user.name %>
+   <%= image_tag like.user.avatar.url, class: "image_likes" %>
 <% end %>

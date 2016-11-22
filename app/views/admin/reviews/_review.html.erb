@@ -1,16 +1,18 @@
 <tr>
   <td><%= review.title %></td>
+  <td><%= review.user.email %></td>
   <td>
     <%= form_tag admin_confirm_review_path(review.id), method: :patch do %>
-      <%= check_box_tag :is_confirm, {}, category.is_confirm,
+      <%= check_box_tag :is_confirm, {}, review.is_confirm,
         onclick: "changeStatus(this)" %>
-      <%= t "admin.manager.review.is_confirm" %>
+      <%= t "review.is_confirm" %>
+      <input type="hidden" name="category_review_id" value="<%= params[:category_review_id] %>">
     <% end %>
   </td>
   <td>
     <%= link_to admin_category_review_review_path(@category_review, review),
       method: :delete,
-      data: {confirm: t("admin.manager.review.destroy_confirm")} do %>
+      data: {confirm: "Are you sure?"} do %>
       <span class="glyphicon glyphicon-trash"></span>
     <% end %>
   </td>

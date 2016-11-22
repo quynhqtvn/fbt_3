@@ -8,4 +8,10 @@ module ApplicationHelper
       redirect_to root_url
     end
   end
+
+  def revenue_on_oneday
+    BookTour.joins(:tour).where('book_tours.created_at BETWEEN ? AND ?',
+      DateTime.now.beginning_of_day, DateTime.now.end_of_day)
+      .sum("tours.price*book_tours.people_number")
+  end
 end

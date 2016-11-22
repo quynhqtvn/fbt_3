@@ -1,0 +1,7 @@
+var more_comment = $("<%= j render @comments %>").hide()
+more_comment.appendTo("#comment_<%= @review.id %>").show('normal');
+<% unless @comments.next_page.nil? %>
+$("#load-more-comments_<%= @review.id %>").html('<%= link_to("load more comments...", review_path(@review, page: @comments.next_page), remote: true) %>');
+<% else %>
+$("#load-more-comments_<%= @review.id %>").html('');
+<% end %>

@@ -1,1 +1,3 @@
-$('#comments-list').html('<%= j render @review.comments %>');
+$("#error_mesages").html("");
+$("#comment_<%= @comment.id %>").remove();
+$("#comment-count_<%= @comment.review.id %>").html("<%= pluralize @comment.review.comments.count, "comment" %>")

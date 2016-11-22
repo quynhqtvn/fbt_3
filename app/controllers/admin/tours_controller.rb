@@ -6,9 +6,11 @@ class Admin::ToursController < ApplicationController
 
   def new
     @tour = Tour.new
+    @categories = CategoryTour.all
   end
 
   def create
+    @categories = CategoryTour.all
     @tour = Tour.new tour_params
     if @tour.save
       flash[:success] = t "admin.manager.tour.create_success"

@@ -1,3 +1,4 @@
+<% provide :title, "Framgia book tour" %>
 <center><h1><%= @tour.name %></h1></center>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -19,6 +20,18 @@
         <%= image_tag "paypal_logo.jpg", class: "image_card" %>
         <%= radio_button_tag :payment_method, "card", true %>
         <%= image_tag "credit-card.jpg", class: "image_card" %>
+          <script>
+    (function() {
+      $(document).on("click", "#new_book_tour input[type='radio']", function(e) {
+        if ($("#payment_method_card:checked").val() === "card") {
+          return $("fieldset.card_info").show();
+        } else {
+          return $("fieldset.card_info").hide();
+        }
+      });
+
+    }).call(this);
+  </script>
         <fieldset class="card_info">
           <%= f.fields_for :card do |c| %>
             <div class="form-group">

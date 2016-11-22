@@ -13,15 +13,16 @@ class Admin::BookToursController < ApplicationController
     if @book_tour.destroy
       flash[:success] = t "admin.manager.book_tour.message_success"
     else
-      flash[:danger] = t "admin.mqanager.book_tour.message_failed"
+      flash[:danger] = t "admin.manager.book_tour.message_failed"
     end
-    redirect_to admin_book_tours_path
+    redirect_to admin_tour_book_tours_path
   end
 
   private
   def load_tours
     @tour = Tour.find_by id: params[:tour_id]
     unless @tour
+      flash[:danger] = t "not_found"
       redirect_to admin_root_path
     end
   end
@@ -29,6 +30,7 @@ class Admin::BookToursController < ApplicationController
   def load_book_tours
     @book_tour = BookTour.find_by id: params[:id]
     unless @book_tour
+      flash[:danger] = t "not_found"
       redirect_to admin_root_url
     end
   end

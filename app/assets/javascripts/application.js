@@ -11,10 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
 //= require wow
-//= require turbolinks
 //= require_tree .
 //= require owl.carousel
 //= require ckeditor/init
+//= require bootstrap-datepicker

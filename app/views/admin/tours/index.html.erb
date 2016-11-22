@@ -1,5 +1,12 @@
+<% provide :title, "Framgia book tour" %>
 <div id="container">
   <h2 class="word-list">
+        <div class="pull-right">
+      <%= link_to new_admin_tour_path, class: "btn btn-primary" do %>
+        <span class="glyphicon glyphicon-plus-sign"></span>
+        <%= t :create_new %>
+      <% end %>
+    </div>
   <%= t "admin.manager.tour.list_tour" %></h2>
   <%= render "list_tours" %>
 </div>

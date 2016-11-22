@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+<%= form_for @comment, remote: true do |f| %>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1">
+      <%= f.hidden_field :review_id, value: review.id %>
+      <%= f.text_area :content, rows: 3, placeholder: "Comment goes here...",
+        class: "form-control", id: "comment_content_#{review.id}" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.submit t(:submit), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+<% end %>

@@ -1,4 +1,3 @@
-$('#comment-<%= @comment.id%>').click(function(){
-  $('#comment-form').
-    replaceWith('<%= j render "comments/edit", comment: @comment %>');
-  })
+$("#error_mesages").html("");
+$("#comment_<%= @comment.id %>").html("<%= j render "shared/comment_form", review: @comment.review %>");
+$("#comment-form").hide();

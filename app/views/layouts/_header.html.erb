@@ -10,20 +10,20 @@
           <ul class="res">
             <li><%= link_to t("home"), root_path, class: "active" %></li>
             <li><%= link_to t("tour.tour"), tours_path %></li>
-            <li><%= link_to t("review.title"), reviews_path %></li>
             <li class="dropdown">
               <%= link_to "#", {class: "dropdown-toggle",
                 "data-toggle": "dropdown"} do %>
-                <%= t "service" %>
+                Reviews
                 <b class="caret"></b>
               <% end %>
-              <ul class="dropdown-menu" style="background-color: #3cafe6">
-                <li><%= link_to t("food"), "#" %></li>
-                <li><%= link_to t("hotel"), "#" %></li>
-                <li><%= link_to t("new"), "#" %></li>
+              <ul class="dropdown-menu" style="background-color: #333333">
+                <li><%= link_to "New", new_review_path %></li>
+                <li><%= link_to "List Reviews", reviews_path %></li>
               </ul>
             </li>
             <% if user_signed_in? %>
+            <li><%= link_to "Activities", activities_path %></li>
+            <li><%= link_to "Users", users_path %></li>
               <% if current_user.is_admin? %>
                 <li><%= link_to t("admin.title"), admin_root_path %></li>
               <% end %>

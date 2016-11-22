@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-
+  post '/rate' => 'rater#create', :as => 'rate'
   root "static_pages#home"
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks#create"}
   mount Ckeditor::Engine => "/ckeditor"
   resources :reviews do
-    resources :comments
     resource :like
   end
+  resources :comments, except: [:new, :index, :show]
   namespace :admin do
     root "users#index", as: "root"
     resources :users, only: [:index, :show, :destroy]
     resources :category_tours
-    resources :confirm_review, only: [:edit, :update]
+    resources :confirm_reviews, only: [:edit, :update]
     resources :category_reviews do
       resources :reviews, only: [:index, :destroy]
     end
@@ -23,5 +23,5 @@ Rails.application.routes.draw do
   resources :tours, only: [:index, :show]
   resources :book_tours
   resources :activities
-  resources :user, only: [:show, :index]
+  resources :users, only: [:show, :index]
 end

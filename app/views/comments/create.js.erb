@@ -1,5 +1,9 @@
-var comments_list = $('#comments-list');
-comments_list.prepend('<%= j render @comment %>');
-comments_list.find('div:last-child').addClass('last-comment');
-$('#comment-form').html('<%= j render 'comments/form' %>');
-$('#comment_content').val('');
+<% if @comment.save %>
+  <% @comment.create_activity :create, owner: current_user %>
+  $("#error_mesages").html("");
+  $("#comment_<%= @comment.review_id %>").prepend("<%= j render "comments/comment", comment: @comment %>");
+  $("#comment_content_<%= @comment.review_id %>").val("");
+  $("#comment-count_<%= @comment.review_id %>").html("<%= pluralize @comment.review.comments.count, "comment" %>")
+<% else %>
+  $("#error_mesages").append("<%= j render "shared/error_mesages", object: @comment %>");
+<% end %>

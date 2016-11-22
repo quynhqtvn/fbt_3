@@ -15,20 +15,22 @@ class Admin::ReviewsController < ApplicationController
     else
       flash[:danger] = t "admin.mqanager.review.destroy_failed"
     end
-    redirect_to admin_reviews_path
+    redirect_to admin_category_review_reviews_path(@review.category_review)
   end
 
   private
   def load_category_reviews
-    @category_review = CategoryReview.find_by id: params[:tour_id]
+    @category_review = CategoryReview.find_by id: params[:category_review_id]
     unless @category_review
+      flash[:success] = "Not found"
       redirect_to admin_root_path
     end
   end
 
-  def load_book_tours
+  def load_reviews
     @review = Review.find_by id: params[:id]
     unless @review
+      flash[:success] = "Not found"
       redirect_to admin_root_url
     end
   end

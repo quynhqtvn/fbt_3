@@ -1,0 +1,12 @@
+<ul class="list-group" id="contact-list">
+  <li class="list-group-item">
+    <div class="col-xs-12 col-sm-3">
+      <%= link_to image_tag(user.avatar.url, class: "avatar"), user_path(user)  %>
+    </div>
+    <div class="col-xs-12 col-sm-9">
+      <span class="center"><%= user.name %></span><br/>
+      <span class="center"><%= user.email %></span><br/>
+    </div>
+    <div class="clearfix"></div>
+  </li>
+</ul>

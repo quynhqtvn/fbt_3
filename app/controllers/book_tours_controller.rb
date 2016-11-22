@@ -34,6 +34,7 @@ class BookToursController < ApplicationController
         if @book_tour.card.purchase
           redirect_to book_tour_path(@book_tour),
             notice: @book_tour.card.card_transaction.message
+          @book_tour.update_attributes is_pay: true
         else
           redirect_to book_tour_path(@book_tour),
             alert: @book_tour.card.card_transaction.message

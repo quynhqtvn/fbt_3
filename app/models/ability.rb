@@ -9,6 +9,7 @@ class Ability
       can :read, Tour
       can [:create, :update, :read], User
       can :manage, Review
+      can :manage, Comment, user_id: user.id
     end
   end
 end

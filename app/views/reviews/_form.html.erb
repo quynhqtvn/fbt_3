@@ -9,6 +9,7 @@
     <%= f.cktext_area :content, class: "form-control" %>
     </div>
   </div>
+  <br>
   <div class="form-group">
     <%= f.label :category_review %>
     <%= f.collection_select :category_review_id, @categories, :id, :title %>

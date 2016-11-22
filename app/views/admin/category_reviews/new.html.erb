@@ -1,14 +1,17 @@
+<% provide :title, "Framgia book tour" %>
 <h1><%= t "admin.manager.category_review.new_category_review" %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for [:admin, @category_review] do |f| %>
-
-      <div class="form-group">
-        <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control" %>
-      </div>
-
-      <%= f.submit t(:submit), class: "btn btn-primary" %>
-    <% end %>
-  </div>
+  <div>
+    <h3>Category Review New</h3>
+    <div class="form-group">
+      <hr>
+      <%= f.label :title , class: "name"%>
+      <%= f.text_field :title, style: "width:400px; margin-left: -150px;" %>
+    </div>
+    <%= f.submit t("submit"), class: "btn btn-default" %>
+    </div>
+  <% end %>
 </div>
+

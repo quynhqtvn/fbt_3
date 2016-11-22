@@ -2895,6 +2895,11 @@ h3.typo1 {
   height: 50px;
 }
 
+.show {
+  width: auto;
+  height: 150px;
+}
+
 .category-title{
   font-weight: bold;
 }
@@ -2979,4 +2984,35 @@ background-color: #3cafe6;
 .alert{
   background-color: lightpink;
   padding: 5px;
+}
+.name{
+  margin-left: -411px;
+}
+.content{
+  margin-left: -902px;
+}
+.tour {
+  margin-left: -782px;
+}
+
+.likes-list {
+  border-radius: 3px;
+  height: 24px;
+  max-width: 24px;
+  width: 24px;
+}
+
+.image_likes {
+  width: auto;
+  height: 20px;
+}
+
+.form_item {
+  label {
+    width: auto;
+  }
+  select {
+    width: auto;
+    display: inline;
+  }
 }

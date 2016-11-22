@@ -215,21 +215,6 @@ en:
     facebook: "Login with Facebook"
     placeholder_email: "Email address"
     placeholder_password: "Password"
-  confirm_delete: "Are you sure?"
-  ago: " ago"
-  admin:
-    title: "Admin"
-    delete: "Delete"
-    destroy_confirm: "Do you sure delete???"
-    list_user: "List User"
-    manager:
-      title: "Manager"
-      tour: "Tour"
-      category: "Category"
-      review: "Review"
-    user:
-      home: "Home"
-  user:
     name: "Name"
     avatar: "Avatar"
     action: "Action"
@@ -260,3 +245,4 @@ en:
     people: "People number:"
     requirement: "Requirement:"
     at: "At: "
+  rating: "Rating: "

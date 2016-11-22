@@ -28,19 +28,19 @@ class Admin::CategoryToursController < ApplicationController
 
   def update
     if @category_tour.update_attributes category_tour_params
-      flash[:success] = t "admin.manager.category_tour.update_success"
+      flash[:success] = "admin.manager.category_tour.update_success"
       redirect_to admin_category_tours_path
     else
-      flash[:danger] = t "admin.manager.category_tour.update_failed"
+      flash[:danger] = "admin.manager.category_tour.update_failed"
       render :edit
     end
   end
 
   def destroy
     if @category_tour.destroy
-      flash[:success] = t "admin.manager.category_tour.destroy_success"
+      flash[:success] = "admin.manager.category_tour.delete_success"
     else
-      flash[:danger] = t "admin.manager.category_tour.destroy_failed"
+      flash[:danger] = "admin.manager.category_tour.destroy_failed"
     end
       redirect_to admin_category_tours_path
   end
@@ -49,7 +49,7 @@ class Admin::CategoryToursController < ApplicationController
   def load_category_tour
     @category_tour = CategoryTour.find_by id: params[:id]
     unless @category_tour
-      flash[:danger] = t "not_found"
+      flash[:danger] = "not found"
       redirect_to admin_category_tours_path
     end
   end

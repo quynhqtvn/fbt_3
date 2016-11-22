@@ -1,6 +1,6 @@
-<%= t "activity.comment_detete" %>
-<% if activity.trackable %>
-  <%= link_to activity.trackable.review.title, activity.trackable.review %>
+deleted a comment to
+<% if activity.trackable  %>
+  <%= link_to activity.trackable.review.title, activity.trackable %>
 <% else %>
   <%= t "activity.action_removed" %>
 <% end %>

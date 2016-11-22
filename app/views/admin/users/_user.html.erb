@@ -3,7 +3,7 @@
   <td><%= image_tag user.avatar.url, class: "image_avatar" %></td>
   <td>
     <%= link_to [:admin, user], method: :delete,
-      data: {confirm: t("admin.user.destroy_confirm")} do %>
+      data: {confirm: "Are you sure?"} do %>
       <span class="glyphicon glyphicon-trash"></span>
     <% end %>
   </td>

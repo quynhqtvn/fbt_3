@@ -7,7 +7,6 @@ class BookTour < ApplicationRecord
   accepts_nested_attributes_for :card
 
   validates :people_number, presence: true
-
   def paypal_url(return_path)
     values = {
       business: Settings.business,

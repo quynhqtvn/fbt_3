@@ -9,8 +9,9 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @comments = @review.comments.latest.paginate page: params[:page],
-      per_page: Settings.per_page
+    @comment = Comment.new
+    @comments = @review.comments.latest.paginate(page: params[:page],
+      per_page: 5)
   end
 
   def new
@@ -22,7 +23,7 @@ class ReviewsController < ApplicationController
     if @review.save
       @review.create_activity :create, owner: current_user
       flash[:success] = t "review.create_successfull"
-      redirect_to root_path
+      redirect_to reviews_path
     else
       render :new
     end
@@ -34,7 +35,7 @@ class ReviewsController < ApplicationController
   def update
     if @review.update_attributes review_params
       flash[:success] = t "review.update_successfull"
-      redirect_to reviews_path
+      redirect_to review_path
     else
       flash[:notice] = t "review.update_error"
       render :edit
@@ -42,8 +43,8 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review.create_activity :destroy, owner: current_user
     if @review.destroy
-      @review.create_activity :create, owner: current_user
     else
       flash[:notice] = t "review.delete_error"
     end

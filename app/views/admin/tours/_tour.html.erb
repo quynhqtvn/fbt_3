@@ -7,12 +7,6 @@
   </td>
 
   <td>
-    <%= link_to new_admin_tour_path(tour) do %>
-      <span class="glyphicon glyphicon-plus-sign"></span>
-    <% end %>
-  </td>
-
-  <td>
     <%= link_to edit_admin_tour_path(tour) do %>
       <span class="glyphicon glyphicon-edit"></span>
     <% end %>
@@ -20,7 +14,7 @@
 
   <td>
     <%= link_to [:admin, tour], method: :delete,
-      data: {confirm: t("admin.manager.tour.destroy_confirm")} do %>
+      data: {confirm: "Are you sure?"} do %>
       <span class="glyphicon glyphicon-trash"></span>
     <% end %>
   </td>

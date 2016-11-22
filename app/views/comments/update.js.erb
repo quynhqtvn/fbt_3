@@ -1,5 +1,8 @@
-var element = document.getElementById('<%= @comment.id %>');
-element.remove();
-$('#comments-list').prepend('<%= j render @comment %>');
-$('#comment-form').html('<%= j render 'comments/form' %>');
-$('.reset-input').val('');
+<% if @comment.save %>
+  $("#error_messages").html("");
+  $("#comment_<%= @comment.id %>").html("<%= j render "comments/comment",
+    comment: @comment %>");
+  $("#comment-form").show();
+<% else %>
+  $("#error_messages").append("<%= j render "shared/error_messages", object: @comment %>");
+<% end %>

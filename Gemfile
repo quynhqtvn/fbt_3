@@ -32,6 +32,10 @@ gem "activemerchant"
 gem "public_activity"
 gem "whenever", :require => false
 gem "sidekiq"
+gem 'ratyrate', :github => 'wazery/ratyrate'
+gem 'jquery-turbolinks'
+gem 'bootstrap-datepicker-rails'
+gem 'whenever', :require => false
 
 group :development, :test do
   gem "byebug", platform: :mri

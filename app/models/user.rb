@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  ratyrate_rater
   devise :database_authenticatable, :registerable,
     :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
